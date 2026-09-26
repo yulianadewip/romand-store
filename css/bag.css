@@ -468,8 +468,7 @@ body {
   }
 
   .bag-item {
-    grid-template-columns: 8rem 1fr;
-
+    grid-template-columns: 8rem minmax(0, 1fr);
     min-height: 13rem;
   }
 
@@ -492,5 +491,40 @@ body {
 
   .bag-summary {
     padding: 2rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .bag-heading {
+    padding: 2.5rem 5%;
+  }
+
+  .bag-heading h1 {
+    font-size: 3.5rem;
+  }
+
+  .bag-intro {
+    font-size: 0.85rem;
+  }
+
+  .bag-item {
+    grid-template-columns: 6.5rem minmax(0, 1fr);
+    min-height: 11rem;
+  }
+
+  .bag-item-info {
+    padding: 1.25rem;
+  }
+
+  .bag-item-name {
+    font-size: 1.5rem;
+  }
+
+  .bag-item-description {
+    font-size: 0.65rem;
+  }
+
+  .bag-summary {
+    padding: 1.5rem;
   }
 }

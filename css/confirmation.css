@@ -17,6 +17,13 @@ body {
   color: var(--ink);
 }
 
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+} 
+
 a {
   color: inherit;
   text-decoration: none;
@@ -238,23 +245,118 @@ a {
 
 @media (max-width: 600px) {
   .confirmation-page {
-    padding: 1.5rem;
+    width: 100%;
+    min-height: 100vh;
+
+    display: block;
+
+    padding: 1rem;
   }
 
   .confirmation-card {
-    padding: 2.5rem 1.5rem;
+    width: 100%;
+    max-width: 100%;
+
+    padding: 2rem 1.25rem;
+  }
+
+  .confirmation-card h1 {
+    font-size: clamp(3rem, 15vw, 4.5rem);
+    line-height: 0.85;
+    word-break: normal;
+  }
+
+  .confirmation-message {
+    margin-top: 1.5rem;
+
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .order-number {
+    margin-top: 2rem;
+    padding: 1rem 0;
+  }
+
+  .order-number span {
+    font-size: 0.65rem;
+  }
+
+  .order-number strong {
+    font-size: 0.9rem;
+  }
+
+  .confirmation-section {
+    margin-top: 2rem;
+  }
+
+  .section-heading {
+    font-size: 0.65rem;
+  }
+
+  .order-item {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.75rem;
+
+    padding: 1rem 0;
+  }
+
+  .order-item-name {
+    font-size: 0.8rem;
+  }
+
+  .order-item-quantity {
+    font-size: 0.65rem;
+  }
+
+  .order-item-price {
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+
+  .summary-row {
+    gap: 1rem;
+  }
+
+  .summary-row span,
+  .summary-row strong {
+    font-size: 0.75rem;
+  }
+
+  .total-row span,
+  .total-row strong {
+    font-size: 0.9rem;
   }
 
   .confirmation-meta {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1.25rem;
+
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+  }
+
+  .confirmation-meta span {
+    font-size: 0.6rem;
+  }
+
+  .confirmation-meta strong {
+    font-size: 0.75rem;
+
+    overflow-wrap: anywhere;
   }
 
   .confirmation-actions {
     flex-direction: column;
+
+    gap: 0.75rem;
+    margin-top: 2rem;
   }
 
   .confirmation-actions a {
     width: 100%;
+    min-height: 3.25rem;
+
+    padding: 0 1rem;
   }
 }
