@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>ROM&ND — Checkout</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/checkout-detail.css" />
+  </head>
+
+  <body>
+    <!-- Header Section Start -->
+    <header class="checkout-header">
+      <a href="index.html" class="checkout-logo"> rom&nd<span>Beauty</span> </a>
+
+      <div class="checkout-header-right">
+        <a href="bag.html">← BACK TO BAG</a>
+      </div>
+    </header>
+
+    <!-- Checkout Section Start -->
+    <main class="checkout-page">
+      <!-- LEFT -->
+      <section class="checkout-form">
+        <div class="checkout-heading">
+          <p class="section-label">03 — CHECKOUT</p>
+
+          <h1>
+            COMPLETE<br />
+            YOUR ORDER.
+          </h1>
+        </div>
+
+        <section class="checkout-section">
+          <div class="section-title">
+            <span>01</span>
+            <h2>CONTACT</h2>
+          </div>
+
+          <div class="form-group">
+            <label for="email"> Email Address </label>
+
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="your@email.com"
+              required
+            />
+          </div>
+        </section>
+
+        <!-- DELIVERY -->
+
+        <section class="checkout-section">
+          <div class="section-title">
+            <span>02</span>
+            <h2>DELIVERY</h2>
+          </div>
+
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="first-name"> First Name </label>
+
+              <input
+                type="text"
+                id="first-name"
+                name="firstName"
+                placeholder="First name"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="last-name"> Last Name </label>
+
+              <input
+                type="text"
+                id="last-name"
+                name="lastName"
+                placeholder="Last name"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="address"> Address </label>
+
+            <input
+              type="text"
+              id="address"
+              name="address"
+              placeholder="Street address"
+              required
+            />
+          </div>
+
+          <div class="form-grid three-columns">
+            <div class="form-group">
+              <label for="city"> City </label>
+
+              <input
+                type="text"
+                id="city"
+                name="city"
+                placeholder="City"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="province"> Province </label>
+
+              <input
+                type="text"
+                id="province"
+                name="province"
+                placeholder="Province"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="postal-code"> Postal Code </label>
+
+              <input
+                type="text"
+                id="postal-code"
+                name="postalCode"
+                placeholder="Postal code"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="phone"> Phone Number </label>
+
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="+62"
+              required
+            />
+          </div>
+        </section>
+
+        <!-- SHIPPING -->
+
+        <section class="checkout-section">
+          <div class="section-title">
+            <span>03</span>
+            <h2>SHIPPING</h2>
+          </div>
+
+          <label class="shipping-option">
+            <input type="radio" name="shipping" value="standard" checked />
+
+            <div class="shipping-info">
+              <div>
+                <strong>Standard Shipping</strong>
+                <p>3–5 business days</p>
+              </div>
+
+              <span>Rp15.000</span>
+            </div>
+          </label>
+
+          <label class="shipping-option">
+            <input type="radio" name="shipping" value="express" />
+
+            <div class="shipping-info">
+              <div>
+                <strong>Express Shipping</strong>
+                <p>1–2 business days</p>
+              </div>
+
+              <span>Rp30.000</span>
+            </div>
+          </label>
+        </section>
+
+        <!-- PAYMENT -->
+
+        <section class="checkout-section">
+          <div class="section-title">
+            <span>04</span>
+            <h2>PAYMENT</h2>
+          </div>
+
+          <p class="payment-note">Select your preferred payment method.</p>
+
+          <label class="payment-option">
+            <input type="radio" name="payment" value="bank_transfer" checked />
+
+            <div>
+              <strong>Bank Transfer</strong>
+              <p>Virtual account payment</p>
+            </div>
+          </label>
+
+          <label class="payment-option">
+            <input type="radio" name="payment" value="e_wallet" />
+
+            <div>
+              <strong>E-Wallet</strong>
+              <p>QRIS / GoPay / other supported wallets</p>
+            </div>
+          </label>
+
+          <label class="payment-option">
+            <input type="radio" name="payment" value="card" />
+
+            <div>
+              <strong>Credit / Debit Card</strong>
+              <p>Secure card payment</p>
+            </div>
+          </label>
+        </section>
+
+        <button type="button" class="pay-button" id="pay-button">
+          PAY NOW →
+        </button>
+      </section>
+
+      <!-- RIGHT / ORDER SUMMARY -->
+
+      <aside class="checkout-summary">
+        <div class="summary-sticky">
+          <p class="summary-label">YOUR ORDER</p>
+
+          <div id="checkout-items" class="checkout-items">
+            <!-- Produk dimasukkan oleh JavaScript -->
+          </div>
+
+          <div class="summary-divider"></div>
+
+          <div class="summary-row">
+            <span>Subtotal</span>
+
+            <span id="checkout-subtotal"> Rp0 </span>
+          </div>
+
+          <div class="summary-row">
+            <span>Shipping</span>
+
+            <span id="checkout-shipping"> Rp15.000 </span>
+          </div>
+
+          <div class="summary-total">
+            <span>Total</span>
+
+            <strong id="checkout-total"> Rp0 </strong>
+          </div>
+
+          <a href="bag.html" class="edit-bag"> ← EDIT BAG </a>
+        </div>
+      </aside>
+    </main>
+
+    <script src="js/checkout-detail.js"></script>
+  </body>
+</html>

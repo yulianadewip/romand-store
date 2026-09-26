@@ -1,0 +1,1730 @@
+:root {
+  --paper: #f6f0e8;
+  --ink: #111;
+  --acid: #edf13c;
+  --pink: #e7a0d5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: var(--paper);
+  color: var(--ink);
+}
+
+/* Navbar Section */
+.navbar {
+  background-color: #d86060;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 5%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.navbar .navbar-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--paper);
+}
+
+.navbar .navbar-logo span {
+  color: var(--paper);
+}
+
+.navbar .navbar-nav a {
+  color: #fff;
+  display: inline-block;
+  position: relative;
+  font-size: 1rem;
+  margin: 0 1rem;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.navbar .navbar-nav a:hover {
+  color: var(--acid);
+  transform: translateY(-1px);
+}
+
+.navbar .navbar-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.35rem;
+  width: 100%;
+  height: 1px;
+  padding: 0;
+  background-color: var(--acid);
+  border: none;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.35s ease;
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(1);
+}
+
+.navbar .navbar-extra a {
+  color: #fff;
+  margin: 0 0.5rem;
+  display: inline-block;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.navbar .navbar-extra a:hover {
+  color: var(--acid);
+  transform: translateY(-2px);
+}
+
+#hamburger-menu {
+  display: none;
+}
+
+/* =========================================================
+   BUTTON CTA
+   ========================================================= */
+
+.collection .collection-left .cta,
+.about .about-left .cta,
+.hero .content .cta,
+.product-button {
+  position: relative;
+  overflow: hidden;
+
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease,
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  margin-top: 4.5rem;
+  display: flex;
+  align-items: center;
+  background-image: url(../img/hero-image.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    15deg,
+    rgba(0, 0, 0, 0.75) 0%,
+    rgba(0, 0, 0, 0.6) 15%,
+    rgba(0, 0, 0, 0.4) 35%,
+    rgba(0, 0, 0, 0.15) 55%,
+    rgba(0, 0, 0, 0) 75%
+  );
+  z-index: 0;
+}
+
+.hero::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  bottom: 0;
+  background: none;
+}
+
+.hero .content {
+  position: relative;
+  padding: 1.5rem 7%;
+  max-width: 950px;
+  z-index: 1;
+}
+
+.hero .content h1 {
+  font-size: clamp(4rem, 6vw, 6.5rem);
+  color: #fff;
+  line-height: 1.2;
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  max-width: 850px;
+  text-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.35),
+    0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.hero .content h1 span {
+  color: var(--pink);
+}
+
+.hero .content p {
+  color: #fff;
+  font-size: clamp(1.2rem, 1.2vw, 1.15rem);
+  margin-top: 1rem;
+  line-height: 1.5rem;
+  font-weight: 500;
+  max-width: 350px;
+  text-shadow: 1 2px 5px rgba(0, 0, 0.45);
+}
+
+.hero .content .hero-description {
+  text-align: justify;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.hero .content .cta {
+  justify-content: center;
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 350;
+  color: var(--ink);
+  background-color: var(--acid);
+}
+
+/* Collection Section */
+.collection,
+.about {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  min-height: 100vh;
+  padding: 2.5rem 2.5% 0 0;
+  margin: 0;
+  overflow: hidden;
+  background-color: var(--paper);
+}
+
+.collection .collection-left,
+.about .about-left {
+  margin-top: 2rem;
+  margin-left: 7rem;
+  flex: 0 0 20%;
+  width: 20%;
+  background-color: var(--paper);
+  padding: 4rem 0%;
+}
+
+.collection .collection-right,
+.about .about-right {
+  flex: 0 0 75%;
+  width: 75%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  overflow: visible;
+}
+
+.collection .collection-right img,
+.about .about-right img {
+  margin-right: 0;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 2 / 1;
+  object-fit: cover;
+}
+
+.collection .shade-name {
+  position: absolute;
+  top: 6rem;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  z-index: 10;
+}
+
+.collection .shade-name span {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.collection .shade-name strong {
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.collection .shade-1 {
+  left: 3%;
+}
+
+.collection .shade-2 {
+  left: 28%;
+}
+
+.collection .shade-3 {
+  left: 53%;
+}
+
+.collection .shade-4 {
+  left: 78%;
+}
+
+.collection .collection-left .collection-atas {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.collection .collection-left h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 8rem;
+}
+
+.collection .collection-left p {
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.2;
+  margin-bottom: 8rem;
+}
+
+.collection .collection-left .cta {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 350;
+  color: #fff;
+  background-color: var(--ink);
+}
+
+/* About Section */
+.about .about-left h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 4rem;
+  color: #d86060;
+}
+
+.about .about-left {
+  margin-left: 7rem;
+  flex: 0 0 20%;
+  width: 20%;
+  background-color: var(--paper);
+  padding: 4rem 0%;
+}
+
+.about .about-left .about-atas {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 3rem;
+}
+
+.about .about-left p {
+  margin-bottom: 4.9rem;
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+.about .about-left .cta {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 350;
+  color: #fff;
+  background-color: #d86060;
+}
+
+.about .about-left .cta:hover {
+  background-color: #7e0000;
+  color: var(--paper);
+  transform: translateY(-3px);
+  box-shadow: 5px 5px 0 #d86060;
+}
+
+/* Hero CTA */
+.hero .content .cta:hover,
+.collection-left .cta:hover {
+  background-color: #7e0000;
+  color: var(--paper);
+  transform: translateY(-3px);
+  box-shadow: 5px 5px 0 #d86060;
+}
+
+/* Product CTA */
+.product-button:hover {
+  background-color: #7e0000;
+  color: var(--paper);
+  transform: translateY(-3px);
+  box-shadow: 5px 5px 0 #d86060;
+}
+
+/* About Banner Section */
+.about-banner {
+  display: grid;
+  grid-template-columns: 1.2fr 0.75fr 1.2fr 0.65fr;
+  width: 100%;
+  min-height: 12rem;
+  background-color: #b02222;
+}
+
+.about-banner-item {
+  min-width: 0;
+}
+
+.about-banner-title {
+  display: flex;
+  align-items: center;
+  padding: 0 3rem;
+}
+
+.about-banner-title h2 {
+  margin: 0;
+  font-family: "Montserrat";
+  font-size: clamp(2.5rem, 3vw, 2.5rem);
+  line-height: 0.9;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--paper);
+}
+
+.about-banner-image {
+  height: 12rem;
+  overflow: hidden;
+}
+
+.about-banner-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-banner-text {
+  display: flex;
+  align-items: center;
+  padding: 0 3rem;
+}
+
+.about-banner-text p {
+  margin: 0;
+  font-family: "Montserrat";
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--paper);
+}
+
+.about-banner-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-banner-button a {
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--acid);
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.4;
+  text-align: center;
+  background-color: var(--acid);
+
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease,
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.about-banner-button a:hover {
+  background-color: var(--paper);
+  color: var(--ink);
+  transform: translateY(-4px) rotate(-2deg);
+  box-shadow: 5px 5px 0 var(--ink);
+}
+
+/* Feeling Your Color Section */
+.feeling-your-color {
+  width: 100%;
+  min-height: 20rem;
+  margin-top: 0.5rem;
+  background-color: var(--paper);
+  display: flex;
+  align-items: center;
+}
+
+.header-left {
+  margin: 0;
+  padding-left: 10rem;
+  padding-right: 4rem;
+  align-self: end;
+  padding-bottom: 9rem;
+}
+
+.header-left p {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.header-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-center h3 {
+  margin: 0;
+  font-family: "Montserrat";
+  font-size: 4.6rem;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  text-align: center;
+  color: var(--ink);
+}
+
+.header-right {
+  align-self: center;
+  padding-left: 3rem;
+}
+
+.header-right p {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+/* mood card section */
+.mood-section {
+  --mood-bg: #7e0000;
+  --mood-text: var(--paper);
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 0 4.5%;
+  background-color: var(--mood-bg);
+  transition: background-color 0.5s ease;
+}
+
+.mood-card {
+  min-height: 12rem;
+  padding: 4rem 2rem 2rem;
+  background-color: var(--paper);
+  color: var(--ink);
+  border: 1px solid var(--ink);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background-color 0.3s ease,
+    color 0.5 ease;
+}
+
+.mood-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 15px 0 #b02222;
+}
+
+.mood-card h4 {
+  margin: 0;
+  font-family: "Montserrat";
+  font-size: 1.8rem;
+  line-height: 0.9;
+  letter-spacing: -0.03s;
+}
+
+.mood-card p {
+  margin: 0;
+}
+
+.mood-card.active {
+  transform: translateY(-3px);
+  box-shadow: 0 3px 0 #b02222;
+}
+
+/* Mood Product Section */
+.mood-product {
+  --mood-bg: #7e0000;
+  --mood-text: #fff;
+  width: 100%;
+  height: auto;
+  min-height: 35rem;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  background-color: var(--mood-bg);
+  transition: background-color 0.5s ease;
+}
+
+.mood-product-image {
+  width: 100%;
+  height: 100%;
+  margin-left: 4.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: var(--mood-bg);
+  transition: background-color 0.5s ease;
+}
+
+.mood-product-image img {
+  margin-top: 5rem;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition:
+    opacity 0.3s ease,
+    transform 0.5s ease;
+}
+
+.mood-product-info {
+  background-color: #7e0000;
+  color: #fff;
+  margin-left: 10rem;
+  padding: 2rem 4%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  transition:
+    background-color 0.5s ease,
+    color 0.5s ease;
+}
+
+.product-label {
+  margin-bottom: 2rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+#product-number {
+  margin-bottom: 1.2rem;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+#product-name {
+  margin-bottom: 1.5rem;
+  font-family: "Montserrat";
+  font-size: clamp(3.5rem, 5vw, 5.5rem);
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+}
+
+#product.description {
+  max-width: 20rem;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  line-height: 1.4;
+}
+
+.product-button {
+  margin-top: 2rem;
+  display: inline-block;
+  padding: 1rem 1.5rem;
+  background-color: var(--paper);
+  color: var(--ink);
+  font-size: 0.75rem;
+  font-weight: 700;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.product-button:hover {
+  background-color: var(--acid);
+}
+
+.another-mood {
+  position: relative;
+  width: fit-content;
+  margin-top: 1.5rem;
+  padding: 0 0 0.3rem;
+  background: none;
+  color: var(--mood-text);
+  font-family: "Montserrat";
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.another-mood::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: currentColor;
+  transform-origin: right;
+  transition: transform 0.35s ease;
+}
+
+.another-mood:hover::after {
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.another-mood:hover {
+  opacity: 0.75;
+}
+
+/* carousel/lookbook section */
+.lookbook {
+  width: 100%;
+  background-color: var(--paper);
+  overflow: hidden;
+}
+
+.lookbook-header {
+  min-height: 13rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  align-items: center;
+  padding: 2rem 4.5%;
+}
+
+.lookbook-header p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.lookbook-header p:first-child {
+  align-self: end;
+  padding-bottom: 1.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.lookbook-header h2 {
+  margin: 0;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(3rem, 5vw, 5rem);
+  font-weight: 900;
+  letter-spacing: -0.05em;
+}
+
+.lookbook-header p:last-child {
+  text-align: right;
+}
+
+.lookbook-carousel {
+  width: 100%;
+  overflow: hidden;
+}
+
+.lookbook-track {
+  display: flex;
+  width: max-content;
+  gap: 0.5rem;
+
+  animation: lookbook-scroll 30s linear infinite;
+}
+
+.lookbook-carousel:hover .lookbook-track {
+  animation-play-state: paused;
+}
+
+.lookbook-item {
+  flex: 0 0 28rem;
+  height: 18rem;
+  overflow: hidden;
+}
+
+.lookbook-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition:
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.5s ease;
+}
+
+.lookbook-item:hover img {
+  transform: scale(1.05);
+  filter: brightness(0.92);
+}
+
+@keyframes lookbook-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 0.25rem));
+  }
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--acid);
+  outline-offset: 4px;
+}
+
+/* Footer section */
+
+.footer {
+  width: 100%;
+  background-color: #d86060;
+  color: var(--paper);
+  padding: 3rem 5% 1rem;
+}
+
+.footer-top {
+  min-height: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(246, 240, 232, 0.4);
+  padding-bottom: 1rem;
+}
+
+.footer-label {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.footer-top h2 {
+  margin: 1rem 0;
+  font-family: "Archivo Black", sans-serif;
+  font-size: clamp(2rem, 9vw, 4rem);
+  line-height: 0.8;
+  letter-spacing: -0.06em;
+}
+
+.footer-top h2 span {
+  color: #7e0000;
+}
+
+.footer-back {
+  align-self: flex-end;
+  color: var(--paper);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  border-bottom: 1px solid var(--paper);
+  padding-bottom: 0.3rem;
+
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.footer-back:hover {
+  color: var(--acid);
+  border-color: var(--acid);
+  transform: translateY(-2px);
+}
+
+.footer-bottom {
+  min-height: 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  gap: 2rem;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.footer-brand span {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+}
+
+.footer-brand small {
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+
+.footer-credit {
+  text-align: center;
+}
+
+.footer-credit p {
+  margin: 0.2rem 0;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+}
+
+.footer-credit p:last-child {
+  opacity: 0.5;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.5rem;
+}
+
+.footer-social a {
+  position: relative;
+  color: var(--paper);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.footer-social a:hover {
+  color: var(--acid);
+  transform: translateY(-2px);
+}
+
+/* media queries Responsive */
+/* Desktop kecil / laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+
+  .collection .collection-left,
+  .about .about-left {
+    margin-left: 4rem;
+  }
+
+  .mood-product-image {
+    margin-left: 2rem;
+  }
+
+  .mood-product-info {
+    margin-left: 4rem;
+  }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  html {
+    font-size: 62.5%;
+  }
+
+  /* ---------- Navbar ---------- */
+
+  .navbar {
+    padding: 1.5rem 4%;
+  }
+
+  .navbar .navbar-logo {
+    font-size: 1.6rem;
+  }
+
+  .navbar .navbar-nav a {
+    margin: 0 0.6rem;
+    font-size: 0.9rem;
+  }
+
+  /* ---------- Hero ---------- */
+
+  .hero {
+    min-height: 90vh;
+    background-position: center;
+  }
+
+  .hero .content {
+    padding: 2rem 6%;
+    max-width: 700px;
+  }
+
+  .hero .content h1 {
+    font-size: clamp(3.8rem, 8vw, 5.5rem);
+  }
+
+  /* ---------- Collection ---------- */
+
+  .collection,
+  .about {
+    min-height: auto;
+    padding: 3rem 5%;
+    gap: 3rem;
+  }
+
+  .collection .collection-left,
+  .about .about-left {
+    margin: 0;
+    padding: 2rem 0;
+    flex: 0 0 30%;
+    width: 30%;
+  }
+
+  .collection .collection-right,
+  .about .about-right {
+    flex: 0 0 70%;
+    width: 70%;
+  }
+
+  .collection .collection-left h2,
+  .about .about-left h2 {
+    font-size: 2.2rem;
+    margin-bottom: 4rem;
+  }
+
+  .collection .collection-left p {
+    font-size: 1.1rem;
+    margin-bottom: 4rem;
+  }
+
+  .about .about-left p {
+    margin-bottom: 3rem;
+  }
+
+  .collection .shade-name {
+    top: 4rem;
+  }
+
+  .collection .shade-name span {
+    font-size: 1.5rem;
+  }
+
+  .collection .shade-name strong {
+    font-size: 0.8rem;
+  }
+
+  /* ---------- About Banner ---------- */
+
+  .about-banner {
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+
+  .about-banner-title {
+    padding: 2rem;
+  }
+
+  .about-banner-image {
+    height: 10rem;
+  }
+
+  .about-banner-text {
+    padding: 2rem;
+  }
+
+  .about-banner-text p {
+    font-size: 1.3rem;
+  }
+
+  .about-banner-button {
+    min-height: 10rem;
+  }
+
+  /* ---------- Feeling Your Color ---------- */
+
+  .feeling-your-color {
+    min-height: 18rem;
+  }
+
+  .header-left {
+    padding-left: 5rem;
+    padding-right: 2rem;
+    padding-bottom: 6rem;
+  }
+
+  .header-center h3 {
+    font-size: 3.8rem;
+  }
+
+  .header-right {
+    padding-left: 2rem;
+  }
+
+  /* ---------- Mood Cards ---------- */
+
+  .mood-section {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 5%;
+  }
+
+  .mood-card {
+    min-height: 13rem;
+    padding: 3rem 1.8rem 1.8rem;
+  }
+
+  .mood-card h4 {
+    font-size: 1.7rem;
+  }
+
+  /* ---------- Mood Product ---------- */
+
+  .mood-product {
+    grid-template-columns: 1fr 1fr;
+    min-height: 30rem;
+  }
+
+  .mood-product-image {
+    margin-left: 0;
+  }
+
+  .mood-product-image img {
+    margin-top: 2rem;
+  }
+
+  .mood-product-info {
+    margin-left: 0;
+    padding: 2rem 8%;
+  }
+
+  .product-label {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  #product-name {
+    font-size: clamp(3rem, 6vw, 4.5rem);
+  }
+
+  #product-description {
+    font-size: 1.5rem;
+  }
+
+  /* ---------- Lookbook ---------- */
+
+  .lookbook-header {
+    min-height: 11rem;
+    padding: 2rem 5%;
+  }
+
+  .lookbook-header h2 {
+    font-size: clamp(2.8rem, 6vw, 4.5rem);
+  }
+
+  .lookbook-item {
+    flex-basis: 24rem;
+    height: 15rem;
+  }
+
+  /* ---------- Footer ---------- */
+
+  .footer {
+    padding: 3rem 5% 1rem;
+  }
+
+  .footer-bottom {
+    gap: 1rem;
+  }
+
+  .footer-social {
+    gap: 1rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  html {
+    font-size: 60%;
+  }
+
+  /* ---------- Navbar ---------- */
+
+  .navbar {
+    padding: 1.3rem 5%;
+  }
+
+  #hamburger-menu {
+    display: inline-block;
+    color: #fff;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition:
+      color 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    width: min(80vw, 30rem);
+    height: calc(100vh - 100%);
+    background-color: var(--ink);
+    padding-top: 2rem;
+    transition: right 0.3s ease;
+  }
+
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+
+  .navbar .navbar-nav a {
+    display: block;
+    margin: 1.5rem 2rem;
+    padding: 0.5rem 0;
+    font-size: 1.5rem;
+  }
+
+  .navbar .navbar-extra a {
+    margin: 0 0.3rem;
+  }
+
+  /* ---------- Hero ---------- */
+
+  .hero {
+    min-height: calc(100vh - 5rem);
+    margin-top: 5rem;
+    background-position: 60% center;
+  }
+
+  .hero .content {
+    width: 100%;
+    padding: 2rem 7%;
+  }
+
+  .hero .content h1 {
+    font-size: clamp(3.5rem, 11vw, 5.5rem);
+    max-width: 100%;
+  }
+
+  .hero .content p {
+    max-width: 100%;
+    font-size: 1.2rem;
+  }
+
+  .hero .content .hero-description {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    text-align: left;
+    max-width: 32rem;
+  }
+
+  .hero .content .cta {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+
+  /* ---------- Collection ---------- */
+
+  .collection,
+  .about {
+    flex-direction: column;
+    width: 100%;
+    min-height: auto;
+    padding: 4rem 6% 0;
+    gap: 2rem;
+  }
+
+  .collection .collection-left,
+  .about .about-left {
+    width: 100%;
+    flex: none;
+    margin: 0;
+    padding: 1rem 0;
+  }
+
+  .collection .collection-right,
+  .about .about-right {
+    width: 100%;
+    flex: none;
+    overflow: visible;
+  }
+
+  .collection .collection-right img,
+  .about .about-right img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+
+  .collection .collection-left .collection-atas,
+  .about .about-left .about-atas {
+    margin-bottom: 1.5rem;
+  }
+
+  .collection .collection-left h2,
+  .about .about-left h2 {
+    font-size: 2.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .collection .collection-left p,
+  .about .about-left p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 2.5rem;
+    max-width: 35rem;
+  }
+
+  .collection .collection-left .cta,
+  .about .about-left .cta {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+
+  /* Shade names */
+  .collection .shade-name {
+    top: 2rem;
+  }
+
+  .collection .shade-name span {
+    font-size: 1.4rem;
+  }
+
+  .collection .shade-name strong {
+    font-size: 0.7rem;
+  }
+
+  .collection .shade-1 {
+    left: 4%;
+  }
+
+  .collection .shade-2 {
+    left: 29%;
+  }
+
+  .collection .shade-3 {
+    left: 54%;
+  }
+
+  .collection .shade-4 {
+    left: 79%;
+  }
+
+  /* ---------- About Banner ---------- */
+
+  .about-banner {
+    grid-template-columns: 1fr 1fr;
+    min-height: auto;
+  }
+
+  .about-banner-title {
+    min-height: 9rem;
+    padding: 1.8rem;
+  }
+
+  .about-banner-title h2 {
+    font-size: 2.5rem;
+  }
+
+  .about-banner-image {
+    height: 9rem;
+  }
+
+  .about-banner-text {
+    min-height: 9rem;
+    padding: 1.8rem;
+  }
+
+  .about-banner-text p {
+    font-size: 1.15rem;
+  }
+
+  .about-banner-button {
+    min-height: 9rem;
+  }
+
+  .about-banner-button a {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+
+  /* ---------- Feeling Your Color ---------- */
+
+  .feeling-your-color {
+    min-height: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 4rem 6%;
+  }
+
+  .header-left {
+    padding: 0;
+    align-self: auto;
+  }
+
+  .header-center {
+    justify-content: flex-start;
+  }
+
+  .header-center h3 {
+    font-size: clamp(3rem, 11vw, 4.5rem);
+    text-align: left;
+  }
+
+  .header-right {
+    padding: 0;
+  }
+
+  .header-right p {
+    font-size: 1rem;
+  }
+
+  /* ---------- Mood Cards ---------- */
+
+  .mood-section {
+    grid-template-columns: 1fr 1fr;
+    padding: 0 6%;
+  }
+
+  .mood-card {
+    min-height: 12rem;
+    padding: 2.5rem 1.5rem 1.5rem;
+  }
+
+  .mood-card h4 {
+    font-size: 1.6rem;
+  }
+
+  .mood-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 0 #b02222;
+  }
+
+  .mood-card.active {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 0 var(--ink);
+  }
+
+  /* ---------- Mood Product ---------- */
+
+  .mood-product {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .mood-product-image {
+    width: 100%;
+    height: 28rem;
+    margin: 0;
+  }
+
+  .mood-product-image img {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    object-fit: contain;
+  }
+
+  .mood-product-info {
+    width: 100%;
+    margin: 0;
+    padding: 3rem 8%;
+  }
+
+  .product-label {
+    margin-bottom: 1.2rem;
+    font-size: 1.2rem;
+  }
+
+  #product-number {
+    margin-bottom: 1rem;
+  }
+
+  #product-name {
+    margin-bottom: 1.2rem;
+    font-size: clamp(3rem, 12vw, 5rem);
+  }
+
+  #product-description {
+    max-width: 100%;
+    font-size: 1.5rem;
+    line-height: 1.4;
+  }
+
+  .product-button {
+    margin-top: 1.5rem;
+    padding: 1rem 1.5rem;
+  }
+
+  /* ---------- Lookbook ---------- */
+
+  .lookbook-header {
+    min-height: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 4rem 6%;
+  }
+
+  .lookbook-header p:first-child {
+    align-self: auto;
+    padding-bottom: 0;
+  }
+
+  .lookbook-header h2 {
+    text-align: left;
+    font-size: clamp(3rem, 12vw, 5rem);
+  }
+
+  .lookbook-header p:last-child {
+    text-align: left;
+  }
+
+  .lookbook-item {
+    flex-basis: 22rem;
+    height: 14rem;
+  }
+
+  /* ---------- Footer ---------- */
+
+  .footer {
+    padding: 3rem 6% 1.5rem;
+  }
+
+  .footer-top {
+    min-height: auto;
+    padding-bottom: 2rem;
+  }
+
+  .footer-top h2 {
+    font-size: clamp(2.8rem, 11vw, 4.5rem);
+    line-height: 0.9;
+  }
+
+  .footer-back {
+    margin-top: 1rem;
+  }
+
+  .footer-bottom {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding-top: 1.5rem;
+  }
+
+  .footer-brand {
+    justify-content: center;
+  }
+
+  .footer-credit {
+    text-align: center;
+  }
+
+  .footer-social {
+    justify-content: center;
+  }
+}
+
+/* Mobile phone */
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+
+  /* ---------- Navbar ---------- */
+
+  .navbar {
+    padding: 1.2rem 5%;
+  }
+
+  .navbar .navbar-logo {
+    font-size: 1.5rem;
+  }
+
+  .navbar .navbar-extra a {
+    font-size: 1.2rem;
+  }
+
+  .navbar .navbar-nav {
+    width: 85vw;
+  }
+
+  /* ---------- Hero ---------- */
+
+  .hero {
+    min-height: 90vh;
+    background-position: 62% center;
+  }
+
+  .hero .content {
+    padding: 2rem 7%;
+  }
+
+  .hero .content h1 {
+    font-size: clamp(3.2rem, 13vw, 5rem);
+    line-height: 0.95;
+  }
+
+  .hero .content p {
+    font-size: 1.15rem;
+  }
+
+  .hero .content .hero-description {
+    font-size: 0.9rem;
+  }
+
+  .hero .content .cta {
+    width: 100%;
+    text-align: center;
+    padding: 1.2rem 1.5rem;
+  }
+
+  /* ---------- Collection ---------- */
+
+  .collection,
+  .about {
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 3rem;
+  }
+
+  .collection .collection-left h2,
+  .about .about-left h2 {
+    font-size: 2.6rem;
+  }
+
+  .collection .collection-left p,
+  .about .about-left p {
+    font-size: 1.1rem;
+  }
+
+  .collection .collection-right img,
+  .about .about-right img {
+    aspect-ratio: 4 / 3;
+  }
+
+  .collection .shade-name {
+    top: 1.5rem;
+  }
+
+  .collection .shade-name span {
+    font-size: 1.2rem;
+  }
+
+  .collection .shade-name strong {
+    font-size: 0.6rem;
+  }
+
+  /* ---------- About Banner ---------- */
+
+  .about-banner {
+    grid-template-columns: 1fr;
+  }
+
+  .about-banner-title,
+  .about-banner-image,
+  .about-banner-text,
+  .about-banner-button {
+    min-height: 8rem;
+  }
+
+  .about-banner-image {
+    height: 12rem;
+  }
+
+  .about-banner-title h2 {
+    font-size: 2.8rem;
+  }
+
+  .about-banner-text p {
+    font-size: 1.2rem;
+  }
+
+  /* ---------- Feeling Your Color ---------- */
+
+  .feeling-your-color {
+    padding: 3rem 5%;
+  }
+
+  .header-center h3 {
+    font-size: clamp(2.8rem, 13vw, 4rem);
+  }
+
+  /* ---------- Mood Cards ---------- */
+
+  .mood-section {
+    grid-template-columns: 1fr;
+    padding: 0 5%;
+  }
+
+  .mood-card {
+    min-height: 11rem;
+    padding: 2.5rem 1.5rem 1.5rem;
+  }
+
+  /* ---------- Mood Product ---------- */
+
+  .mood-product-image {
+    height: 24rem;
+  }
+
+  .mood-product-info {
+    padding: 3rem 7%;
+  }
+
+  #product-name {
+    font-size: clamp(3rem, 15vw, 4.5rem);
+  }
+
+  #product-description {
+    font-size: 1.4rem;
+  }
+
+  /* ---------- Lookbook ---------- */
+
+  .lookbook-header {
+    padding: 3rem 5%;
+  }
+
+  .lookbook-item {
+    flex-basis: 18rem;
+    height: 12rem;
+  }
+
+  /* ---------- Footer ---------- */
+
+  .footer {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .footer-top h2 {
+    font-size: clamp(2.7rem, 13vw, 4rem);
+  }
+
+  .footer-brand {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  .footer-social {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}

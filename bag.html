@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>ROM&ND — Your Bag</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/bag.css" />
+  </head>
+
+  <body>
+    <!-- Header Section -->
+    <header class="bag-header">
+      <a href="index.html" class="bag-logo"> rom&nd<span>Beauty</span> </a>
+
+      <div class="bag-navigation">
+        <a href="checkout.html">← BACK TO SHOP</a>
+
+        <span class="bag-title"> BAG (<span id="bag-count">0</span>) </span>
+      </div>
+    </header>
+
+    <!-- Bag Section -->
+    <main class="bag-page">
+      <section class="bag-heading">
+        <div>
+          <p class="section-label">02 — YOUR BAG</p>
+
+          <h1>
+            YOUR<br />
+            GLOSS.
+          </h1>
+        </div>
+
+        <p class="bag-intro">
+          Review your shades<br />
+          before checkout.
+        </p>
+      </section>
+
+      <!-- Cart -->
+      <section class="bag-content">
+        <div class="bag-items" id="bag-items">
+          <!-- Products akan dimasukkan oleh JavaScript -->
+        </div>
+        <aside class="bag-summary">
+          <p class="summary-label">ORDER SUMMARY</p>
+
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <span id="subtotal">Rp0.</span>
+          </div>
+
+          <div class="summary-row">
+            <span>Shipping</span>
+            <span>Calculated at checkout</span>
+          </div>
+
+          <div class="summary-total">
+            <span>Total</span>
+            <strong id="total">Rp0.</strong>
+          </div>
+
+          <a href="#" class="checkout-button" id="checkout-button">
+            PROCEED TO CHECKOUT →
+          </a>
+
+          <a href="checkout.html" class="continue-shopping">
+            ← CONTINUE SHOPPING
+          </a>
+        </aside>
+      </section>
+    </main>
+
+    <!-- Bag kosong Section -->
+    <section class="empty-bag" id="empty-bag">
+      <p class="section-label">YOUR BAG IS EMPTY</p>
+
+      <h2>
+        NOTHING<br />
+        HERE YET.
+      </h2>
+
+      <p>
+        Discover your favorite gloss<br />
+        and add it to your bag.
+      </p>
+
+      <a href="checkout.html" class="shop-button"> SHOP THE COLLECTION → </a>
+    </section>
+
+    <script src="js/bag.js"></script>
+  </body>
+</html>

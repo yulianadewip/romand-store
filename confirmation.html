@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>ROM&ND — Order Confirmed</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/confirmation.css" />
+  </head>
+
+  <body>
+    <main class="confirmation-page">
+      <div class="confirmation-card">
+        <p class="confirmation-label">ROM&ND BEAUTY</p>
+
+        <h1>
+          ORDER<br />
+          <span>CONFIRMED.</span>
+        </h1>
+
+        <p class="confirmation-message">
+          Thank you for your order.<br />
+          Your gloss is on its way.
+        </p>
+
+        <!-- ORDER ID -->
+        <div class="order-number">
+          <span>ORDER</span>
+          <strong id="order-id">#-</strong>
+        </div>
+
+        <!-- ORDER ITEMS -->
+        <section class="confirmation-section">
+          <div class="section-heading">
+            <span>YOUR GLOSS</span>
+            <span id="item-count">0 ITEMS</span>
+          </div>
+
+          <div id="order-items" class="order-items">
+            <p class="loading">Loading your order...</p>
+          </div>
+        </section>
+
+        <!-- SUMMARY -->
+        <section class="confirmation-section">
+          <div class="section-heading">
+            <span>ORDER SUMMARY</span>
+          </div>
+
+          <div class="summary-row">
+            <span>SUBTOTAL</span>
+            <strong id="order-subtotal">Rp0</strong>
+          </div>
+
+          <div class="summary-row">
+            <span>SHIPPING</span>
+            <strong id="order-shipping">Rp0</strong>
+          </div>
+
+          <div class="summary-row total-row">
+            <span>TOTAL</span>
+            <strong id="order-total">Rp0</strong>
+          </div>
+        </section>
+
+        <!-- SHIPPING + PAYMENT -->
+        <section class="confirmation-meta">
+          <div>
+            <span>SHIPPING METHOD</span>
+            <strong id="shipping-method">-</strong>
+          </div>
+
+          <div>
+            <span>PAYMENT METHOD</span>
+            <strong id="payment-method">-</strong>
+          </div>
+        </section>
+
+        <!-- ACTIONS -->
+        <div class="confirmation-actions">
+          <a href="index.html" class="back-home"> BACK TO HOME </a>
+
+          <a href="checkout.html" class="shop-again"> SHOP AGAIN → </a>
+        </div>
+      </div>
+    </main>
+
+    <script src="js/confirmation.js"></script>
+  </body>
+</html>

@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>ROM&ND — Admin Orders</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/admin.css" />
+  </head>
+
+  <body>
+    <header class="admin-header">
+      <div class="admin-logo">ROM&ND</div>
+
+      <div class="admin-title">
+        <span>ADMIN</span>
+        <h1>ORDERS</h1>
+      </div>
+    </header>
+
+    <main class="admin-main">
+      <section class="admin-summary">
+        <div class="summary-card">
+          <span class="summary-label">TOTAL ORDERS</span>
+          <strong id="total-orders">0</strong>
+        </div>
+
+        <div class="summary-card">
+          <span class="summary-label">PENDING</span>
+          <strong id="pending-orders">0</strong>
+        </div>
+
+        <div class="summary-card">
+          <span class="summary-label">TOTAL SALES</span>
+          <strong id="total-sales">Rp0</strong>
+        </div>
+      </section>
+
+      <section class="orders-section">
+        <div class="section-heading">
+          <div>
+            <span class="section-number">01</span>
+            <h2>ALL ORDERS</h2>
+          </div>
+
+          <button id="refresh-button" class="refresh-button">REFRESH</button>
+        </div>
+
+        <div class="table-wrapper">
+          <table class="orders-table">
+            <thead>
+              <tr>
+                <th>ORDER</th>
+                <th>CUSTOMER</th>
+                <th>SHIPPING</th>
+                <th>PAYMENT</th>
+                <th>TOTAL</th>
+                <th>STATUS</th>
+                <th>DATE</th>
+                <th>ACTION</th>
+              </tr>
+            </thead>
+
+            <tbody id="orders-table-body">
+              <tr>
+                <td colspan="8" class="loading">Loading orders...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <!-- order detail modal -->
+    <div id="order-modal" class="order-modal">
+      <div class="order-modal-content">
+        <div class="modal-header">
+          <div>
+            <span class="modal-label">ORDER DETAIL</span>
+            <h2 id="modal-order-id">#-</h2>
+          </div>
+
+          <button id="close-modal" class="close-modal">×</button>
+        </div>
+
+        <div class="modal-body">
+          <!-- customer -->
+          <section class="detail-section">
+            <div class="detail-section-title">CUSTOMER</div>
+
+            <div class="customer-detail-grid">
+              <div class="detail-item">
+                <span>NAME</span>
+                <strong id="modal-customer-name">-</strong>
+              </div>
+
+              <div class="detail-item">
+                <span>EMAIL</span>
+                <strong id="modal-customer-email">-</strong>
+              </div>
+
+              <div class="detail-item">
+                <span>PHONE</span>
+                <strong id="modal-customer-phone">-</strong>
+              </div>
+
+              <div class="detail-item detail-address">
+                <span>ADDRESS</span>
+                <strong id="modal-customer-address">-</strong>
+              </div>
+            </div>
+          </section>
+
+          <!-- order items -->
+          <section class="detail-section">
+            <div class="detail-section-title">PRODUCTS</div>
+
+            <div id="modal-order-items" class="modal-order-items">
+              <!-- Items akan diisi JavaScript -->
+            </div>
+          </section>
+
+          <!-- order summary -->
+          <section class="detail-section">
+            <div class="detail-section-title">ORDER SUMMARY</div>
+
+            <div class="order-summary-detail">
+              <div class="summary-row">
+                <span>SUBTOTAL</span>
+                <strong id="modal-subtotal">Rp0</strong>
+              </div>
+
+              <div class="summary-row">
+                <span>SHIPPING</span>
+                <strong id="modal-shipping-cost">Rp0</strong>
+              </div>
+
+              <div class="summary-row total-row">
+                <span>TOTAL</span>
+                <strong id="modal-total">Rp0</strong>
+              </div>
+            </div>
+          </section>
+
+          <!-- shipping and payment -->
+          <section class="detail-section">
+            <div class="detail-section-title">SHIPPING & PAYMENT</div>
+
+            <div class="customer-detail-grid">
+              <div class="detail-item">
+                <span>SHIPPING METHOD</span>
+                <strong id="modal-shipping-method">-</strong>
+              </div>
+
+              <div class="detail-item">
+                <span>PAYMENT METHOD</span>
+                <strong id="modal-payment-method">-</strong>
+              </div>
+
+              <div class="detail-item">
+                <span>CITY</span>
+                <strong id="modal-city">-</strong>
+              </div>
+
+              <div class="detail-item">
+                <span>PROVINCE</span>
+                <strong id="modal-province">-</strong>
+              </div>
+
+              <div class="detail-item">
+                <span>POSTAL CODE</span>
+                <strong id="modal-postal-code">-</strong>
+              </div>
+
+              <div class="detail-item">
+                <span>STATUS</span>
+
+                <select id="modal-status" class="status-select">
+                  <option value="pending">Pending</option>
+                  <option value="paid">Paid</option>
+                  <option value="processing">Processing</option>
+                  <option value="shipped">Shipped</option>
+                  <option value="completed">Completed</option>
+                </select>
+              </div>
+            </div>
+          </section>
+          <div class="status-action">
+            <button id="save-status-button" class="save-status-button">
+              SAVE STATUS
+            </button>
+
+            <span id="status-message"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/admin.js"></script>
+  </body>
+</html>

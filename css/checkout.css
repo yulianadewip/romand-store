@@ -1,0 +1,296 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #f6f0e8;
+  color: #111;
+}
+
+/* Header Section */
+.shop-header {
+  width: 100%;
+  height: 4.5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 4%;
+
+  background-color: var(--paper);
+
+  border-bottom: 0.5px solid #111;
+}
+
+.shop-logo {
+  color: #111;
+
+  font-size: 1.5rem;
+  font-weight: 800;
+
+  letter-spacing: -0.05em;
+}
+
+.shop-logo span {
+  font-weight: 500;
+}
+
+/* Navigation */
+.shop-navigation {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.shop-navigation a {
+  color: #111;
+
+  font-size: 0.7rem;
+  font-weight: 700;
+
+  letter-spacing: 0.05em;
+}
+
+.shop-navigation a:hover {
+  opacity: 0.5;
+}
+
+/* Hero Section */
+
+.shop-hero {
+  width: 100%;
+  min-height: 10rem;
+
+  display: grid;
+  grid-template-columns: 1fr 2.5fr 1fr;
+
+  align-items: center;
+
+  padding: 3rem 5%;
+
+  background-color: #d86060;
+}
+
+/* LEFT LABEL */
+
+.shop-hero-label {
+  align-self: end;
+  padding-bottom: 1rem;
+}
+
+.shop-hero-label p {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.shop-hero h1 {
+  margin: 0;
+
+  font-family: "Archivo Black", sans-serif;
+  font-size: clamp(2rem, 8vw, 4rem);
+  line-height: 0.82;
+  letter-spacing: -0.06em;
+  text-align: center;
+}
+
+.shop-hero-description {
+  justify-self: end;
+}
+
+.shop-hero-description p {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.product-grid {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  background-color: #f6f0e8;
+}
+
+.product-card {
+  min-width: 0;
+
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+
+  min-height: 24rem;
+
+  border-bottom: 1px solid #111;
+}
+
+.product-card:nth-child(odd) {
+  border-right: 1px solid #111;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+}
+
+.product-image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.04);
+}
+
+.product-info {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 2.5rem;
+
+  background-color: #f6f0e8;
+}
+
+.product-number {
+  margin-bottom: 1rem;
+
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.product-info h2 {
+  margin-bottom: 2rem;
+
+  font-family: "Archivo Black", sans-serif;
+
+  font-size: clamp(2rem, 3vw, 3.2rem);
+
+  line-height: 0.9;
+
+  letter-spacing: -0.04em;
+}
+
+/* Description */
+
+.product-info > p {
+  max-width: 18rem;
+
+  font-size: 0.9rem;
+
+  line-height: 1.5;
+}
+
+.product-bottom {
+  margin-top: auto;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: 1rem;
+}
+
+.product-bottom strong {
+  font-size: 1rem;
+}
+
+.add-cart {
+  padding: 0.9rem 8rem; 
+
+  background-color: #111;
+  color: #f6f0e8;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.add-cart:hover {
+  background-color: #edf13c;
+  color: #111;
+}
+
+@media (max-width: 900px) {
+  .shop-hero {
+    grid-template-columns: 1fr;
+
+    gap: 2rem;
+
+    text-align: center;
+  }
+
+  .shop-hero-label {
+    align-self: center;
+  }
+
+  .shop-hero-description {
+    justify-self: center;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-card:nth-child(odd) {
+    border-right: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .shop-header {
+    padding: 0 5%;
+  }
+
+  .shop-navigation {
+    gap: 1rem;
+  }
+
+  .shop-hero {
+    min-height: 22rem;
+    padding: 3rem 5%;
+  }
+
+  .shop-hero h1 {
+    font-size: 3.5rem;
+  }
+
+  .product-card {
+    grid-template-columns: 1fr 1fr;
+    min-height: 20rem;
+  }
+
+  .product-info {
+    padding: 1.5rem;
+  }
+
+  .product-info h2 {
+    font-size: 1.8rem;
+  }
+}
