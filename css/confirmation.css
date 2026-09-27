@@ -22,7 +22,7 @@ body {
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
-} 
+}
 
 a {
   color: inherit;
@@ -261,7 +261,7 @@ a {
   }
 
   .confirmation-card h1 {
-    font-size: clamp(3rem, 15vw, 4.5rem);
+    font-size: clamp(3rem, 15vw, 4rem);
     line-height: 0.85;
     word-break: normal;
   }

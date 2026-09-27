@@ -217,8 +217,7 @@ body {
 }
 
 .add-cart {
-  padding: 0.9rem 8rem; 
-
+  padding: 0.9rem 8rem;
   background-color: #111;
   color: #f6f0e8;
   font-family: "Montserrat", sans-serif;
@@ -292,5 +291,9 @@ body {
 
   .product-info h2 {
     font-size: 1.8rem;
+  }
+
+  .add-cart {
+    padding: 0.9rem 3.2rem;
   }
 }

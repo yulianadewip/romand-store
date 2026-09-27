@@ -248,7 +248,7 @@ payButton.addEventListener("click", () => {
 
     .catch((error) => {
       console.error("ERROR:", error);
-      alert("Gagal terhubung ke backend.");
+      alert(`Error: ${error.message}`);
     });
 });
 
